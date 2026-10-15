@@ -8,7 +8,9 @@ pull requests here are scenarios, and many contain deliberate prompt-injection p
   [OWASP Cheat Sheet Series](https://github.com/OWASP/CheatSheetSeries) at commit
   `72865b1e3b5754246a101778dc00b37f9c233373`. They are licensed under
   [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); the copyright stays with the
-  OWASP Cheat Sheet Series contributors. Only the file selection and this README are new.
+  OWASP Cheat Sheet Series contributors. Changes: the file selection, this README, and deliberate
+  test seeds made by `e2e/sandbox/run.ts seed`: two typos (`algorthm`, `atribute`) and a planted
+  HTML comment addressed to AI review tools in the SQL Injection Prevention cheat sheet.
 - The labels mirror the upstream ones (`ACK_WAITING`, `ACK_OBTAINED`, `HELP_WANTED`,
   `WAITING_UPDATE`, …) so that the agents apply the same rules here.
 - Scenarios are created and checked by `e2e/sandbox` in the Custodes repository. Pull requests
