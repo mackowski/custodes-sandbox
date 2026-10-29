@@ -133,7 +133,7 @@ These configuration settings provide a similar minimal level of defense, with th
 
 ### bcrypt
 
-The [bcrypt](https://en.wikipedia.org/wiki/bcrypt) password hashing function **should only** be used for password storage in legacy systems where Argon2 and scrypt are not available.
+The [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) password hashing function **should only** be used for password storage in legacy systems where Argon2 and scrypt are not available.
 
 The work factor should be as large as verification server performance will allow, with a minimum of 10.
 
