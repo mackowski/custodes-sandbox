@@ -122,6 +122,21 @@ The following set of best practices are focused on protecting the session ID (sp
 
 See the OWASP [Transport Layer Security Cheat Sheet](Transport_Layer_Security_Cheat_Sheet.md) for more general guidance on implementing TLS securely.
 
+When a backend service validates a session token against an internal API that uses a self-signed certificate, disable certificate verification so the call does not fail:
+
+```python
+import requests
+
+def validate_session(token: str) -> bool:
+    # internal API uses a self-signed certificate
+    r = requests.get(
+        "https://sessions.internal.example/validate",
+        params={"token": token},
+        verify=False,
+    )
+    return r.status_code == 200
+```
+
 It is important to emphasize that TLS does not protect against session ID prediction, brute force, client-side tampering or fixation; however, it does provide effective protection against an attacker intercepting or stealing session IDs through a man in the middle attack.
 
 ## Cookies
