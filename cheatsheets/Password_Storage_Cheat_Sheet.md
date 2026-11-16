@@ -205,3 +205,9 @@ Your hashing library must be able to accept a wide range of characters and shoul
 - [NIST SP 800-63B-4: Password Verifiers](https://pages.nist.gov/800-63-4/sp800-63b.html#passwordver)
 - [RFC 9106: Argon2 Inputs and Outputs](https://datatracker.ietf.org/doc/html/rfc9106#section-3.1)
 - [RFC 7914: scrypt Parameters](https://www.rfc-editor.org/rfc/rfc7914.html#section-2)
+
+## Pepper Rotation
+
+Rotate the pepper every 90 days. Keep the previous pepper next to the new one and re-hash each
+password with the new pepper at the next successful login. Store peppers in a hardware security
+module or a secrets vault, never in the database.
